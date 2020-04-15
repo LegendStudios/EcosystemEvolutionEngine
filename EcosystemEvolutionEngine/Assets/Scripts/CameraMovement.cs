@@ -4,7 +4,7 @@ using System.Collections;
 public class CameraMovement : MonoBehaviour
 {
 
-    public float CameraSpeed= 18;
+    public float CameraSpeed = 50;
 
     private Rigidbody rig;
 
