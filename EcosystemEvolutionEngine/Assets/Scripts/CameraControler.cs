@@ -50,7 +50,7 @@ public class CameraControler : MonoBehaviour
                 ScrollAmount *= (this._CameraDistance * 0.3f);
 
                 this._CameraDistance += ScrollAmount * -1f;
-                this._CameraDistance = Mathf.Clamp(this._CameraDistance, 1.5f, 40f);
+                this._CameraDistance = Mathf.Clamp(this._CameraDistance, 5f, 25f);
             }
         }
 
