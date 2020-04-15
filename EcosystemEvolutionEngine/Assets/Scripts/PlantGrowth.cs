@@ -15,17 +15,11 @@ public class PlantGrowth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         // Rename the grass(clone) to grass
         this.name = "grass";
 
         //Depending on the grow speed, try to spread every ___ seconds
         InvokeRepeating("TrySpread", (100f - GrowSpeed) / 10f, (100f - GrowSpeed) / 10f);
-    }
-
-    void Update()
-    {
-
     }
 
     public void TrySpread()
@@ -38,8 +32,6 @@ public class PlantGrowth : MonoBehaviour
             {
                 Spread();
             }
-            
-        
         }
         //If the plant cant spread anymore, stop trying.
         if(Amount == 0)
