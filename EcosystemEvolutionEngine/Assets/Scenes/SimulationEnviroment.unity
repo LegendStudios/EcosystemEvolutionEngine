@@ -313,10 +313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e024b630d0bd74eaaa70517bf3ca17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSize: {x: 25, y: 30}
+  mapSize: {x: 25, y: 25}
   tilePrefab: {fileID: 5424250865796376970, guid: ec1f55af6f2b52949b5dd3d04bb96d25,
     type: 3}
-  outlinePercent: 0.036
+  outlinePercent: 0.01
 --- !u!4 &971632419
 Transform:
   m_ObjectHideFlags: 0
