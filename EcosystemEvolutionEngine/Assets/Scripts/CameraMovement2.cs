@@ -9,6 +9,8 @@ public class CameraMovement2 : MonoBehaviour
 
     public float speed = 12f;
 
+    public bool CameraDisabled = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +18,21 @@ public class CameraMovement2 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+         if (Input.GetKeyDown(KeyCode.LeftShift))
+         {
+            CameraDisabled = !CameraDisabled;
+         }
 
-        Vector3 move = transform.right * x + transform.forward * z;
+        if (!CameraDisabled)
+        {
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-        controller.Move(move * speed * Time.deltaTime);
+            Vector3 move = transform.right * x + transform.forward * z;
+
+            controller.Move(move * speed * Time.deltaTime);
+        }
     }
 }
