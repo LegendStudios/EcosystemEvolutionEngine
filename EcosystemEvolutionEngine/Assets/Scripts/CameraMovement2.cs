@@ -11,6 +11,8 @@ public class CameraMovement2 : MonoBehaviour
 
     public bool CameraDisabled = false;
 
+    public float MouseSensitivity = 100f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,8 +31,9 @@ public class CameraMovement2 : MonoBehaviour
         {
             float x = Input.GetAxis("Horizontal");
             float z = Input.GetAxis("Vertical");
+            float y = Input.GetAxis("Mouse ScrollWheel");
 
-            Vector3 move = transform.right * x + transform.forward * z;
+            Vector3 move = transform.right * x + transform.forward * z + transform.up * y * MouseSensitivity * -1;
 
             controller.Move(move * speed * Time.deltaTime);
         }
